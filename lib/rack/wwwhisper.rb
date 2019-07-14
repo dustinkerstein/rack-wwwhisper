@@ -142,7 +142,7 @@ class WWWhisper
   end
 
   def http_init(connection_id)
-    http = Net::HTTP::Persistent.new(connection_id)
+    http = Net::HTTP::Persistent.new(name: connection_id)
     store = OpenSSL::X509::Store.new()
     store.set_default_paths
     http.cert_store = store
